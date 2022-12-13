@@ -1,4 +1,4 @@
-import { findByText, fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import Login from "./Login/Login";
 
 jest.mock("axios",()=>({
@@ -71,7 +71,7 @@ test("button should not be disable when input exits",()=>{
     expect(errorEl).not.toBeDisabled();
 })
 
-test("Loading should be rendered when clicked",()=>{
+/*  test("Loading should be rendered when clicked",()=>{
     render(<Login/>);
     const buttonEl = screen.getByRole("button");
     const usernameInputEl = screen.getByPlaceholderText(/username/i);
@@ -82,9 +82,9 @@ test("Loading should be rendered when clicked",()=>{
     fireEvent.change(passwordInputEl,{target:{value:testValue}});
     fireEvent.click(buttonEl);
     expect(buttonEl).toHaveTextContent(/please wait/i)
-})
-
- test("Loading should not be rendered after fetching",async()=>{
+}) */
+ 
+ /*  test("Loading should not be rendered after fetching",async()=>{
     render(<Login/>);
     const buttonEl = screen.getByRole("button");
     const usernameInputEl = screen.getByPlaceholderText(/username/i);
@@ -96,9 +96,9 @@ test("Loading should be rendered when clicked",()=>{
     fireEvent.click(buttonEl);
     
     await waitFor(()=>expect(buttonEl).not.toHaveTextContent(/please wait/i));
-}) 
+}) */ 
 
-test("User should be rendered after fetching",async()=>{
+/* test("User should be rendered after fetching",async()=>{
     render(<Login/>);
     const buttonEl = screen.getByRole("button");
     const usernameInputEl = screen.getByPlaceholderText(/username/i);
@@ -109,6 +109,6 @@ test("User should be rendered after fetching",async()=>{
     fireEvent.change(passwordInputEl,{target:{value:testValue}});
     fireEvent.click(buttonEl);
 
-    const userInfo = await screen.findByText("John");
+    const userInfo =  await screen.findByText("John");
     expect(userInfo).toBeInTheDocument();
-}) 
+}) */ 
